@@ -1,8 +1,11 @@
 import React from "react";
+import { Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import SearchBox from "./SearchBox";
 import { logout } from "../actions/userActions";
+import shopperImg from '../srcImages/shopper.svg'
 
 const Header = () => {
 	const dispatch = useDispatch();
@@ -18,11 +21,12 @@ const Header = () => {
 			<Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
 				<Container>
 					<LinkContainer to="/">
-						<Navbar.Brand>ProShop</Navbar.Brand>
+						<Navbar.Brand>STUFF</Navbar.Brand>
 					</LinkContainer>
-
+					<img src={shopperImg} style={{height: '78px', width: '180px', marginLeft: '-80px'}} alt="woman shopping"/>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
+						<Route render={({ history }) => <SearchBox history={history} />} />
 						<Nav className="ml-auto">
 							<LinkContainer to="/cart">
 								<Nav.Link>
