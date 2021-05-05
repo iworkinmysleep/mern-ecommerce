@@ -5,7 +5,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import SearchBox from "./SearchBox";
 import { logout } from "../actions/userActions";
-import shopperImg from '../srcImages/shopper.svg'
+import devicesImg from '../srcImages/devices.svg'
 
 const Header = () => {
 	const dispatch = useDispatch();
@@ -21,9 +21,9 @@ const Header = () => {
 			<Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
 				<Container>
 					<LinkContainer to="/">
-						<Navbar.Brand>STUFF</Navbar.Brand>
+						<Navbar.Brand>puterSTUFF</Navbar.Brand>
 					</LinkContainer>
-					<img src={shopperImg} style={{height: '78px', width: '180px', marginLeft: '-80px'}} alt="woman shopping"/>
+					<img src={devicesImg} style={{height: '78px', width: '100px', marginLeft: '-20px',}} alt="woman shopping"/>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Route render={({ history }) => <SearchBox history={history} />} />
